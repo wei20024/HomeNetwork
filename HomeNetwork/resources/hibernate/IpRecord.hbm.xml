@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernater Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="homeNetwork.model.IpRecord" table="ipRecord">
+    <id name="key" type="java.lang.Long">
+      <column name="`key`"/>
+      <generator class="increment"/>
+    </id>
+
+    <!-- properties -->
+    <property name="ip" type="string">
+      <column name="ip" length="255" not-null="false"/>
+    </property>
+
+    <many-to-one name="users" class="homeNetwork.model.User" fetch="select">
+      <column name="userKey" not-null="false"/>
+    </many-to-one>
+
+    <property name="created" type="timestamp">
+      <column name="created" length="19"/>
+    </property>
+  </class>
+</hibernate-mapping>

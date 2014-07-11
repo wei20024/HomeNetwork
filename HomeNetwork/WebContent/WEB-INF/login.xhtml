@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+  <h:body>
+    <h:form>
+      <h:panelGroup>
+        <div style="padding-left: 20px; padding-right: 15px; float: left; line-height: 30px;">
+          <p:outputLabel value="Username:"/><br/>
+          <p:outputLabel value="Password:"/>
+        </div>
+        <div style="overflow: hidden;">
+          <p:inputText value="user"/><br/>
+          <p:password value="pw"/><br/><br/>
+          <p:commandButton value="Login"
+                           action="#{loginHandler.login}"/>
+        </div>
+      </h:panelGroup>
+    </h:form>
+  </h:body>
+
+</html>
